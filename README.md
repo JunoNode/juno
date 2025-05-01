@@ -97,4 +97,5 @@ Website (Coming Soon)
 
 Twitter: @JunoNode
 
+![Stage 1: Foundation](https://github.com/user-attachments/assets/81befb69-5e30-48bc-b50f-281268ea4b7a)
 
