@@ -63,4 +63,4 @@ export const WalletProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const useWalletContext = () => useContext(WalletContext);
+export const useWalletContext = () => useContext(WalletContext)
