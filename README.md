@@ -55,43 +55,43 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ## Project Structure
 
-juno/
-  public/
-    favicon.ico
-    assets/
-      logo.svg
-      jungle-bg.png
-      glow-eyes.png
-    og/
-      og-default.png
-      og-preview.jpg
+juno/ 
+  public/ 
+    favicon.ico 
+    assets/ 
+      logo.svg 
+      jungle-bg.png 
+      glow-eyes.png 
+    og/ 
+      og-default.png 
+      og-preview.jpg 
 
-  src/
-    components/
-      Layout.tsx
-      Navbar.tsx
-      Footer.tsx
-      WalletConnect.tsx
-      ChatWindow.tsx
-    context/
-      WalletProvider.tsx
-    features/
-      chat/
-        ChatContainer.tsx
-        ChatInput.tsx
-        ChatMessage.tsx
-        useChat.ts
-        chatApi.ts
-      alerts/
-        SmartAlerts.tsx
-      portfolio/
-        PortfolioPanel.tsx
-      settings/
-        SettingsPanel.tsx
-      watchtower/
-        WatchedWallet.tsx
-        useWatchedWallets.ts
-    hooks/
+  src/ 
+    components/ 
+      Layout.tsx 
+      Navbar.tsx 
+      Footer.tsx 
+      WalletConnect.tsx 
+      ChatWindow.tsx 
+    context/ 
+      WalletProvider.tsx 
+    features/ 
+      chat/ 
+        ChatContainer.tsx 
+        ChatInput.tsx 
+        ChatMessage.tsx 
+        useChat.ts 
+        chatApi.ts 
+      alerts/  
+        SmartAlerts.tsx 
+      portfolio/ 
+        PortfolioPanel.tsx 
+      settings/ 
+        SettingsPanel.tsx 
+      watchtower/ 
+        WatchedWallet.tsx 
+        useWatchedWallets.ts 
+    hooks/ 
       useWallet.ts
     lib/
       api.ts
@@ -107,28 +107,28 @@ juno/
     styles/
       globals.css
     types/
-      token.ts
-      wallet.ts
-    utils/
-      parseRisks.ts
+      token.ts 
+      wallet.ts 
+    utils/ 
+      parseRisks.ts 
 
-  tests/
-    chat.test.ts
-    utils.test.ts
+  tests/ 
+    chat.test.ts 
+    utils.test.ts 
 
-  .github/
-    workflows/
-      deploy.yml
+  .github/ 
+    workflows/ 
+      deploy.yml 
 
   .gitignore
-  jest.config.js
-  jest.setup.js
-  tsconfig.json
-  tailwind.config.js
-  package.json
-  README.md
-  LICENSE
-  CONTRIBUTING.md
+  jest.config.js 
+  jest.setup.js 
+  tsconfig.json 
+  tailwind.config.js 
+  package.json 
+  README.md 
+  LICENSE 
+  CONTRIBUTING.md 
 
 
 ---
