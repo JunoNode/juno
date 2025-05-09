@@ -60,7 +60,6 @@ juno/
 
   public/
       favicon.ico
-   
     assets/
       logo.svg
       jungle-bg.png
@@ -69,7 +68,6 @@ juno/
     og/
       og-default.png
       og-preview.jpg
-
   src/
   
     components/
