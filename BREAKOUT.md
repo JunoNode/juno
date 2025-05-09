@@ -1,6 +1,6 @@
 # Solana Breakout Hackathon Submission: Juno
 
-## 🔍 Project Overview
+## Project Overview
 **Juno** is an AI-native crypto assistant built for the Solana ecosystem. Through a calm, jungle-themed interface, it helps users:
 
 - Connect and monitor their Phantom wallet
@@ -12,7 +12,7 @@
 
 ---
 
-## 🧠 Built During the Hackathon
+## Built During the Hackathon
 
 This submission includes:
 
@@ -25,7 +25,7 @@ This submission includes:
 
 ---
 
-## 🔧 Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js, Tailwind CSS, Framer Motion
 - **Wallets**: Phantom (Solana), MetaMask (EVM optional)
@@ -34,7 +34,7 @@ This submission includes:
 
 ---
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 ```bash
 npm install
