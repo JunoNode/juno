@@ -30,6 +30,7 @@ This submission includes:
 - **Frontend**: Next.js, Tailwind CSS, Framer Motion
 - **Wallets**: Phantom (Solana), MetaMask (EVM optional)
 - **APIs**: Covalent, GoPlus, OpenAI (GPT-4)
+- **Deployment**: Vercel + GitHub Actions
 - **Language**: TypeScript
 
 ---
@@ -39,3 +40,23 @@ This submission includes:
 ```bash
 npm install
 npm run dev
+```
+
+> Configure `.env` file with API keys for Covalent, GoPlus, and OpenAI.
+
+---
+
+## Post-Hackathon Plans
+
+- Add memory + session context to AI
+- Connect alert engine to Watchtower events
+- Improve Solana tx indexing (Helius/SolanaFM)
+- Expand UX for mobile, theme modes, and depth
+
+---
+
+## Note to Judges
+
+The design and AI logic are intentionally calm and minimal — Juno is meant to feel more like a space than a tool. This submission represents our functional MVP, with deep system work behind a focused UI. More is coming soon.
+
+Thank you for reviewing Juno.
