@@ -57,9 +57,9 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 
 juno/
-
   public/
       favicon.ico
+      
     assets/
       logo.svg
       jungle-bg.png
