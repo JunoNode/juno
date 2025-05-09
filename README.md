@@ -55,33 +55,81 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ## Project Structure
 
-/public
-/src
-  /components
-  /pages
-  /styles
-  /lib
-  /utils
-/backend
-  /api
-  /services
-  /jobs
-/docs
-.env.example
-README.md
+juno/
+  public/
+    favicon.ico
+    assets/
+      logo.svg
+      jungle-bg.png
+      glow-eyes.png
+    og/
+      og-default.png
+      og-preview.jpg
 
----
+  src/
+    components/
+      Layout.tsx
+      Navbar.tsx
+      Footer.tsx
+      WalletConnect.tsx
+      ChatWindow.tsx
+    context/
+      WalletProvider.tsx
+    features/
+      chat/
+        ChatContainer.tsx
+        ChatInput.tsx
+        ChatMessage.tsx
+        useChat.ts
+        chatApi.ts
+      alerts/
+        SmartAlerts.tsx
+      portfolio/
+        PortfolioPanel.tsx
+      settings/
+        SettingsPanel.tsx
+      watchtower/
+        WatchedWallet.tsx
+        useWatchedWallets.ts
+    hooks/
+      useWallet.ts
+    lib/
+      api.ts
+      wallet.ts
+      utils.ts
+      alerts.ts
+    pages/
+      index.tsx
+      portfolio.tsx
+      watchtower.tsx
+      chat.tsx
+      settings.tsx
+    styles/
+      globals.css
+    types/
+      token.ts
+      wallet.ts
+    utils/
+      parseRisks.ts
 
-## Roadmap (Stage 1)
+  tests/
+    chat.test.ts
+    utils.test.ts
 
-- [x] Core architecture setup  
-- [ ] AI chat system connected  
-- [ ] Portfolio tracking module  
-- [ ] Risk scanning integration  
-- [ ] Alert engine UI  
-- [ ] Smart wallet interface  
-- [ ] Live environment preview  
-- [ ] Token launch and LP tracker
+  .github/
+    workflows/
+      deploy.yml
+
+  .gitignore
+  jest.config.js
+  jest.setup.js
+  tsconfig.json
+  tailwind.config.js
+  package.json
+  README.md
+  LICENSE
+  CONTRIBUTING.md
+
 
 ---
 
@@ -97,7 +145,7 @@ Website (Coming Soon)
 
 Twitter: [@JunoNode](https://twitter.com/JunoNode)
 
-![Stage 1: Foundation](https://github.com/user-attachments/assets/a13734d9-ecbd-4fd9-beb9-b1e4c6fee899)
+![Foundation](https://github.com/user-attachments/assets/a13734d9-ecbd-4fd9-beb9-b1e4c6fee899)
 
 
 
