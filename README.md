@@ -55,27 +55,33 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ## Project Structure
 
-juno/ 
+
 juno/
+
   public/
-    favicon.ico
+      favicon.ico
+   
     assets/
       logo.svg
       jungle-bg.png
       glow-eyes.png
+      
     og/
       og-default.png
       og-preview.jpg
 
   src/
+  
     components/
       Layout.tsx
       Navbar.tsx
       Footer.tsx
       WalletConnect.tsx
       ChatWindow.tsx
+      
     context/
       WalletProvider.tsx
+      
     features/
       chat/
         ChatContainer.tsx
@@ -83,33 +89,43 @@ juno/
         ChatMessage.tsx
         useChat.ts
         chatApi.ts
+        
       alerts/
         SmartAlerts.tsx
+        
       portfolio/
         PortfolioPanel.tsx
+        
       settings/
         SettingsPanel.tsx
+        
       watchtower/
         WatchedWallet.tsx
         useWatchedWallets.ts
+        
     hooks/
       useWallet.ts
+      
     lib/
       api.ts
       wallet.ts
       utils.ts
       alerts.ts
+      
     pages/
       index.tsx
       portfolio.tsx
       watchtower.tsx
       chat.tsx
       settings.tsx
+      
     styles/
       globals.css
+      
     types/
       token.ts
       wallet.ts
+      
     utils/
       parseRisks.ts
 
