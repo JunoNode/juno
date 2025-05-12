@@ -52,6 +52,18 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ---
 
+## Part of the Solana Breakout Hackathon 2025  
+
+[Read the Breakpoint Submission →](./BREAKOUT.md)
+
+---
+
+## Manifesto
+
+🌿 [Read the Juno Manifesto →](./MANIFESTO.md)  
+
+---
+
 ## License
 
 MIT © Juno
