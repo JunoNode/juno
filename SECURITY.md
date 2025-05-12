@@ -28,6 +28,6 @@ If you discover a security issue related to:
 
 Please do not open a public issue.
 
-Instead, contact us via X @JunoNode and open a private discussion labeled security.
+Instead, contact us via Twitter: [@JunoNode](https://twitter.com/JunoNode) and open a private discussion labeled security.
 
 We take all vulnerability reports seriously and will respond within 48 hours.
