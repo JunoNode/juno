@@ -12,7 +12,7 @@ A watchtower in the fog.
 A grove you return to.  
 A map that unfolds when you’re ready.
 
-We believe the next generation of crypto interfaces will feel less like control panels  
+We believe the next generation of crypto interfaces will feel less like control panels 
 and more like places.  
 Juno is our answer to that belief.
 
