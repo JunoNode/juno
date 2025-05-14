@@ -54,7 +54,7 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ## Part of the Solana Breakout Hackathon 2025  
 
-[Read the Breakpoint Submission →](./BREAKOUT.md)
+[Read the Breakout Submission →](./BREAKOUT.md)
 
 ---
 
