@@ -2,7 +2,7 @@
 
 This document logs development progress and public milestones for Juno.
 
-> April–May 2025
+## 2025
 
 > April 10 — Initial vision for Juno formed. Early concept focused on AI presence rather than dashboards.
 
