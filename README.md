@@ -52,6 +52,12 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ---
 
+## Docs
+
+[Explore the Docs (GitBook)](https://junonode.gitbook.io/junonode)
+
+---
+
 ## Part of the Solana Breakout Hackathon 2025  
 
 [Read the Breakout Submission →](./BREAKOUT.md)
