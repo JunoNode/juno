@@ -82,7 +82,8 @@ Website (Coming Soon)
 
 Twitter: [@JunoNode](https://twitter.com/JunoNode)
 
-![Foundation](https://github.com/user-attachments/assets/a13734d9-ecbd-4fd9-beb9-b1e4c6fee899)
+![Foundation](https://github.com/user-attachments/assets/4a2193f6-5982-4ae7-a14e-e4f2b4726ba1)
+
 
 
 
