@@ -29,3 +29,9 @@ This document logs development progress and public milestones for Juno.
 > May 13 — GitBook launched: Full philosophy, architecture, and narrative UX broken down.
 
 > May 14 — GitHub file system expanded with examples, docs, and internal logic (prompt examples, env setup, contributing).
+
+> May 15 — Visual concept mockups rendered (Treasure Map, Watchtower, Grove). Assets shared for teaser posts.
+
+> May 16 — SECURITY.md, UPDATES.md, and roadmap finalized. Tailwind config styled with ambient greens.
+
+> May 17 — prompt-examples.md and CHANGELOG.md added. askJuno logic refined with memory+wallet chaining.
