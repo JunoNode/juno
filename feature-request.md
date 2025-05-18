@@ -9,4 +9,6 @@ about: Suggest something Juno should observe, remember, or signal
 
 ## Any examples or comparisons?
 
+---
+
 Reach out through Twitter: [@JunoNode](https://x.com/JunoNode)
