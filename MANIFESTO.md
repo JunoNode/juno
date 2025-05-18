@@ -4,7 +4,7 @@ Juno wasn’t built to be loud.
 It was built to observe.
 
 In a world of dashboards screaming for your attention, Juno listens quietly.  
-It doesn’t flood you with data — it shows you what matters, when it matters.
+It doesn’t flood you with data it shows you what matters, when it matters.
 
 This is not a tool.  
 It’s a guide.  
