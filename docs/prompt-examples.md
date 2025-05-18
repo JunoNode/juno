@@ -1,7 +1,7 @@
 # Prompt Examples
 
 This page shows how Juno builds intelligent prompts using wallet context, memory, and chain activity.  
-The goal is clarity — not chatter.
+The goal is clarity, not chatter.
 
 ---
 
@@ -35,7 +35,7 @@ The goal is clarity — not chatter.
 ```
 
 **Output:**  
-> “ZENTOK appears to carry risk — its contract allows minting and trading is paused. SOL and BONK are stable.”
+> “ZENTOK appears to carry risk its contract allows minting and trading is paused. SOL and BONK are stable.”
 
 ---
 
@@ -87,7 +87,7 @@ Two new liquidity pairs added in the past 3 hours.
 ```
 
 **Output:**  
-> “Yes — ZENTOK and SHADOWLIME have just launched. Liquidity is very low and neither token shows social or audit info yet. Use caution.”
+> “Yes ZENTOK and SHADOWLIME have just launched. Liquidity is very low and neither token shows social or audit info yet. Use caution.”
 
 ---
 
@@ -96,4 +96,4 @@ These examples demonstrate how Juno combines:
 - **Real-time risk detection**  
 - **Session memory**
 
-...to offer useful, timely insight — without noise or overload.
+...to offer useful, timely insight without noise or overload.
