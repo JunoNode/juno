@@ -16,3 +16,4 @@ Each signal is scored and surfaced based on risk logic.
 - **Level 1** — Wallet Activity / New Launch (Informational)
 
 Used to prioritize what Juno surfaces calmly vs urgently.
+ 
