@@ -44,4 +44,4 @@ This document logs development progress and public milestones for Juno.
 
 > May 21 — root-process repo structure finalized. Placeholder files scaffolded. GitHub visuals and new teaser post drafted.
 
-> May 22-25 —  Feedback from early testers integrated. Final animations for deisng brought in. Previews to come this week for community.
+> May 22-25 —  Feedback from early testers integrated. Final animations for design brought in. Previews to come this week for community.
