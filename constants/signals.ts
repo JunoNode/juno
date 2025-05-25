@@ -10,3 +10,4 @@ export type SignalType = keyof typeof SIGNAL_TYPES;
 export function getSignalLabel(type: string): string {
   return SIGNAL_TYPES[type as SignalType] || "Unknown Signal";
 }
+ 
