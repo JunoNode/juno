@@ -34,4 +34,14 @@ This document logs development progress and public milestones for Juno.
 
 > May 16 — SECURITY.md, UPDATES.md, and roadmap finalized. Tailwind config styled with ambient greens.
 
-> May 17 — prompt-examples.md and CHANGELOG.md added. askJuno logic refined with memory+wallet chaining.
+> May 17 — prompt-examples.md added. askJuno logic refined with memory+wallet chaining.
+
+> May 18 — SIGNALS.md completed. Signal severity levels introduced. Shared constants refactored. renderSignal.tsx cleaned.
+
+> May 19 — Unit tests added for signal scoring and rendering. memoryTools.ts added for dev prompt tracing. Design flow updated via tester feedback.
+
+> May 20 — Final preview environment scoped. Grove empty state UX written. Private rollout messaging finalized for early testers.
+
+> May 21 — root-process repo structure finalized. Placeholder files scaffolded. GitHub visuals and new teaser post drafted.
+
+> May 22-25 -  Feedback from early testers integrated. Final animations for deisng brought in. Previews to come this week for community.
