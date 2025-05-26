@@ -1,0 +1,40 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles or component-specific tweaks */
+
+html, body {
+  @apply bg-jungle text-white font-sans antialiased min-h-screen;
+}
+
+#root {
+  @apply flex justify-center items-start p-6;
+}
+
+/* Utility overrides if needed (optional) */
+.glass-card {
+  background-color: theme('colors.glass');
+  backdrop-filter: blur(6px);
+  box-shadow: theme('boxShadow.soft');
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+/* Animations available in tailwind.config.js */
+.fade-in {
+  @apply animate-fade;
+}
+.float {
+  @apply animate-float;
+}
+.pulse-glow {
+  @apply animate-pulseGlow;
+}
+.drift {
+  @apply animate-drift;
+}
+.sonar {
+  @apply animate-sonar;
+}
