@@ -17,3 +17,14 @@ Each signal is scored and surfaced based on risk logic.
 
 Used to prioritize what Juno surfaces calmly vs urgently.
  
+## Signal Confidence Scoring
+
+Each signal includes a `confidenceScore` between 0 and 1, based on:
+
+- **Wallet Age**: Older wallets are typically more reliable.
+- **Volume**: Signals with higher USD volume are stronger.
+- **Signal Type**: Some signal types carry more predictive weight.
+- **Historical Accuracy**: If tracked, past signal success influences scoring.
+- **Direction**: Buy vs sell biases the output slightly.
+
+Use this score to filter or rank signals before executing or displaying them.
