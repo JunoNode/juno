@@ -66,7 +66,7 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ## Manifesto
 
-🌿 [Read the Juno Manifesto →](./MANIFESTO.md)  
+[Read the Juno Manifesto →](./MANIFESTO.md)  
 
 ---
 
