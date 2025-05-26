@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import WalletDashboard from './components/WalletDashboard';
+import './index.css';
+
 
 const dummyWallet = {
   address: "9gzLP8xR9dRka...vU7W",
