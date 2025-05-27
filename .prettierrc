@@ -1,0 +1,24 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "endOfLine": "lf"
+}
+
+---
+
+This file sets your formatting rules:
+
+> semi: Enforce semicolons at the end of statements.
+
+> trailingComma: Use trailing commas in ES5-valid places.
+
+> singleQuote: Prefer single quotes for strings.
+
+> printWidth: Wrap lines longer than 80 characters.
+
+> tabWidth: Use 2 spaces per indent.
+
+> endOfLine: Ensure consistent line endings.
