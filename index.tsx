@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import WalletDashboard from './components/WalletDashboard';
 import WalletTokenTable from './components/WalletTokenTable';
+import TokenValueBar from './components/TokenValueBar';
 import './index.css';
 
 const dummyWallet = {
@@ -23,6 +24,7 @@ root.render(
     <>
       <WalletDashboard {...dummyWallet} />
       <WalletTokenTable tokens={mockTokens} />
+      <TokenValueBar tokens={mockTokens} />
     </>
   </React.StrictMode>
 );
