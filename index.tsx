@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import WalletDashboard from './components/WalletDashboard';
 import WalletTokenTable from './components/WalletTokenTable';
 import TokenValueBar from './components/TokenValueBar';
+import WalletSignalFeed from './components/WalletSignalFeed';
 import './index.css';
 
 const dummyWallet = {
@@ -18,6 +19,12 @@ const mockTokens = [
   { name: 'USDC', symbol: 'USDC', amount: 89.5, usdValue: 89.5 },
 ];
 
+const mockSignals = [
+  { type: 'buy-pressure', confidence: 0.92, timestamp: '2024-05-25T10:00:00Z' },
+  { type: 'trend-reversal', confidence: 0.88, timestamp: '2024-05-26T15:30:00Z' },
+  { type: 'volume-spike', confidence: 0.74, timestamp: '2024-05-27T08:45:00Z' },
+];
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
@@ -25,6 +32,7 @@ root.render(
       <WalletDashboard {...dummyWallet} />
       <WalletTokenTable tokens={mockTokens} />
       <TokenValueBar tokens={mockTokens} />
+      <WalletSignalFeed signals={mockSignals} />
     </>
   </React.StrictMode>
 );
