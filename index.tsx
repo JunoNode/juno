@@ -4,6 +4,8 @@ import WalletDashboard from './components/WalletDashboard';
 import WalletTokenTable from './components/WalletTokenTable';
 import TokenValueBar from './components/TokenValueBar';
 import WalletSignalFeed from './components/WalletSignalFeed';
+import WalletHeader from './components/WalletHeader';
+import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
 const dummyWallet = {
@@ -28,11 +30,15 @@ const mockSignals = [
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <>
-      <WalletDashboard {...dummyWallet} />
-      <WalletTokenTable tokens={mockTokens} />
-      <TokenValueBar tokens={mockTokens} />
-      <WalletSignalFeed signals={mockSignals} />
-    </>
+    <ErrorBoundary>
+      <>
+        <WalletHeader address={dummyWallet.address} totalSignals={dummyWallet.totalSignals} />
+        <WalletDashboard {...dummyWallet} />
+        <WalletTokenTable tokens={mockTokens} />
+        <TokenValueBar tokens={mockTokens} />
+        <WalletSignalFeed signals={mockSignals} />
+      </>
+    </ErrorBoundary>
   </React.StrictMode>
 );
+
