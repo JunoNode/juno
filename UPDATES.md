@@ -45,3 +45,13 @@ This document logs development progress and public milestones for Juno.
 > May 21 — root-process repo structure finalized. Placeholder files scaffolded. GitHub visuals and new teaser post drafted.
 
 > May 22-25 —  Feedback from early testers integrated. Final animations for design brought in. Previews to come this week for community.
+
+> May 26 — SignalTimeline component implemented for visual event history. Types reorganized into types/entities/ for cleaner structure.
+
+> May 27 — Snapshot test added for WalletTokenTable. COMPONENTS.md created to document all UI modules.
+
+> May 28 — WalletSignalFeed built with emoji icons and confidence display. Signal type icons mapped. WalletSkeleton shimmer loader added for loading states.
+
+> May 29 — WalletHeader component added as sticky top bar. ErrorBoundary implemented to gracefully handle UI crashes.
+
+> May 30 — Snapshot and render tests written for SignalTimeline. Last updated timestamp added to feed. ConfidenceBadge component created for color-coded signal strength.
