@@ -32,7 +32,11 @@ root.render(
   <React.StrictMode>
     <ErrorBoundary>
       <>
-        <WalletHeader address={dummyWallet.address} totalSignals={dummyWallet.totalSignals} />
+        <WalletHeader
+          address={dummyWallet.address}
+          totalSignals={dummyWallet.totalSignals}
+          onRefresh={() => console.log('🔄 Refresh triggered')}
+        />
         <WalletDashboard {...dummyWallet} />
         <WalletTokenTable tokens={mockTokens} />
         <TokenValueBar tokens={mockTokens} />
@@ -41,4 +45,3 @@ root.render(
     </ErrorBoundary>
   </React.StrictMode>
 );
-
