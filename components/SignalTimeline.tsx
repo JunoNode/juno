@@ -10,6 +10,12 @@ interface Props {
   signals: SignalEvent[];
 }
 
+const getColor = (confidence: number) => {
+  if (confidence >= 0.85) return 'bg-green-500';
+  if (confidence >= 0.7) return 'bg-yellow-400';
+  return 'bg-red-500';
+};
+
 const SignalTimeline: React.FC<Props> = ({ signals }) => {
   return (
     <div className="mt-6 max-w-xl mx-auto">
@@ -17,7 +23,9 @@ const SignalTimeline: React.FC<Props> = ({ signals }) => {
       <div className="relative border-l-2 border-glass pl-4">
         {signals.map((signal, index) => (
           <div key={index} className="mb-6 relative">
-            <div className="absolute left-[-10px] top-1.5 w-3 h-3 bg-glow rounded-full shadow-jungle"></div>
+            <div
+              className={`absolute left-[-10px] top-1.5 w-3 h-3 rounded-full shadow-jungle ${getColor(signal.confidence)}`}
+            ></div>
             <p className="text-sm text-white mb-1 font-medium">
               {new Date(signal.timestamp).toLocaleString()}
             </p>
