@@ -6,6 +6,7 @@ import TokenValueBar from './components/TokenValueBar';
 import WalletSignalFeed from './components/WalletSignalFeed';
 import WalletHeader from './components/WalletHeader';
 import ErrorBoundary from './components/ErrorBoundary';
+import SignalLegend from './components/SignalLegend'; // ✅ Added
 import './index.css';
 
 const dummyWallet = {
@@ -41,6 +42,7 @@ root.render(
         <WalletTokenTable tokens={mockTokens} />
         <TokenValueBar tokens={mockTokens} />
         <WalletSignalFeed signals={mockSignals} />
+        <SignalLegend /> {/* ✅ Added here */}
       </>
     </ErrorBoundary>
   </React.StrictMode>
