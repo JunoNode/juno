@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import WalletDashboard from './components/WalletDashboard';
 import WalletTokenTable from './components/WalletTokenTable';
 import TokenValueBar from './components/TokenValueBar';
 import WalletSignalFeed from './components/WalletSignalFeed';
 import WalletHeader from './components/WalletHeader';
+import SignalLegend from './components/SignalLegend';
+import SignalFilter from './components/SignalFilter';
 import ErrorBoundary from './components/ErrorBoundary';
-import SignalLegend from './components/SignalLegend'; // ✅ Added
 import './index.css';
 
 const dummyWallet = {
@@ -28,9 +29,12 @@ const mockSignals = [
   { type: 'volume-spike', confidence: 0.74, timestamp: '2024-05-27T08:45:00Z' },
 ];
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(
-  <React.StrictMode>
+const App = () => {
+  const [filter, setFilter] = useState('all');
+  const filteredSignals =
+    filter === 'all' ? mockSignals : mockSignals.filter((s) => s.type === filter);
+
+  return (
     <ErrorBoundary>
       <>
         <WalletHeader
@@ -41,9 +45,17 @@ root.render(
         <WalletDashboard {...dummyWallet} />
         <WalletTokenTable tokens={mockTokens} />
         <TokenValueBar tokens={mockTokens} />
-        <WalletSignalFeed signals={mockSignals} />
-        <SignalLegend /> {/* ✅ Added here */}
+        <SignalFilter selected={filter} onChange={setFilter} />
+        <WalletSignalFeed signals={filteredSignals} />
+        <SignalLegend />
       </>
     </ErrorBoundary>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+  <React.StrictMode>
+    <App />
   </React.StrictMode>
 );
