@@ -1,5 +1,12 @@
 import React from 'react';
-import { TokenHolding } from '../types/token';
+import { formatAmount } from '../utils/formatAmount';
+
+interface TokenHolding {
+  name: string;
+  symbol: string;
+  amount: number;
+  usdValue: number;
+}
 
 interface Props {
   tokens: TokenHolding[];
@@ -23,7 +30,7 @@ const WalletTokenTable: React.FC<Props> = ({ tokens }) => {
             <tr key={i} className="border-t border-gray-200">
               <td className="py-2">{token.name}</td>
               <td className="py-2">{token.symbol}</td>
-              <td className="py-2 text-right">{token.amount.toFixed(2)}</td>
+              <td className="py-2 text-right">{formatAmount(token.amount)}</td>
               <td className="py-2 text-right">${token.usdValue.toFixed(2)}</td>
             </tr>
           ))}
