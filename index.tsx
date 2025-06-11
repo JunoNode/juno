@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import WalletDashboard from './components/WalletDashboard';
 import WalletTokenTable from './components/WalletTokenTable';
@@ -35,13 +35,29 @@ const App = () => {
   const filteredSignals =
     filter === 'all' ? mockSignals : mockSignals.filter((s) => s.type === filter);
 
+  const handleRefresh = () => {
+    console.log('🔄 Refresh triggered');
+    // You can expand this with loading state and data fetching later
+  };
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === 'r') {
+        e.preventDefault();
+        handleRefresh();
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, []);
+
   return (
     <ErrorBoundary>
       <>
         <WalletHeader
           address={dummyWallet.address}
           totalSignals={dummyWallet.totalSignals}
-          onRefresh={() => console.log('🔄 Refresh triggered')}
+          onRefresh={handleRefresh}
         />
         <WalletDashboard {...dummyWallet} />
         <WalletTokenTable tokens={mockTokens} />
