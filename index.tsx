@@ -8,6 +8,7 @@ import WalletHeader from './components/WalletHeader';
 import SignalLegend from './components/SignalLegend';
 import SignalFilter from './components/SignalFilter';
 import ErrorBoundary from './components/ErrorBoundary';
+import DevPanel from './components/DevPanel';
 import './index.css';
 
 const dummyWallet = {
@@ -48,6 +49,11 @@ const App = () => {
         <SignalFilter selected={filter} onChange={setFilter} />
         <WalletSignalFeed signals={filteredSignals} />
         <SignalLegend />
+        <DevPanel
+          tokensCount={mockTokens.length}
+          signalsCount={filteredSignals.length}
+          filter={filter}
+        />
       </>
     </ErrorBoundary>
   );
