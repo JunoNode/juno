@@ -9,6 +9,8 @@ import SignalLegend from './components/SignalLegend';
 import SignalFilter from './components/SignalFilter';
 import ErrorBoundary from './components/ErrorBoundary';
 import DevPanel from './components/DevPanel';
+import { Toaster } from 'react-hot-toast';
+import { notifyRefresh } from './lib/toast';
 import './index.css';
 
 const dummyWallet = {
@@ -36,8 +38,7 @@ const App = () => {
     filter === 'all' ? mockSignals : mockSignals.filter((s) => s.type === filter);
 
   const handleRefresh = () => {
-    console.log('🔄 Refresh triggered');
-    // You can expand this with loading state and data fetching later
+    notifyRefresh();
   };
 
   useEffect(() => {
@@ -70,6 +71,7 @@ const App = () => {
           signalsCount={filteredSignals.length}
           filter={filter}
         />
+        <Toaster position="top-right" />
       </>
     </ErrorBoundary>
   );
