@@ -33,7 +33,12 @@ const mockSignals = [
 ];
 
 const App = () => {
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState(() => localStorage.getItem('juno-signal-filter') || 'all');
+
+useEffect(() => {
+  localStorage.setItem('juno-signal-filter', filter);
+}, [filter]);
+
   const filteredSignals =
     filter === 'all' ? mockSignals : mockSignals.filter((s) => s.type === filter);
 
