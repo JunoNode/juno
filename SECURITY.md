@@ -2,6 +2,19 @@
 
 Juno is built with wallet-first safety in mind. We do not store private keys, sensitive personal information, or interact with user funds in any custodial way.
 
+## Scope
+
+We welcome reports related to vulnerabilities in the following areas:
+
+- Wallet connection and Phantom login flows
+- Signal scoring, rendering, and storage logic
+- Token risk flags and smart contract integrations
+- Frontend UI components that expose private or financial data
+- API route protection and validation
+- DevPanel and developer-facing tools
+
+---
+
 ## Core Principles
 
 - Juno connects to wallets (like Phantom) in read-only mode unless explicitly interacting
@@ -25,6 +38,14 @@ If you discover a security issue related to:
 - Data exposure in the dashboard
 
 ---
+
+## Safe Harbor
+
+We will not pursue legal action against individuals who:
+
+- Act in good faith to disclose vulnerabilities
+- Avoid exploiting or accessing user data
+- Follow the steps outlined in this policy
 
 Please do not open a public issue.
 
