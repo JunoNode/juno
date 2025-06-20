@@ -35,3 +35,4 @@ const WalletHeader: React.FC<WalletHeaderProps> = ({ address, totalSignals, onRe
 };
 
 export default WalletHeader;
+
