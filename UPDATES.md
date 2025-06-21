@@ -55,3 +55,48 @@ This document logs development progress and public milestones for Juno.
 > May 29 — WalletHeader component added as sticky top bar. ErrorBoundary implemented to gracefully handle UI crashes.
 
 > May 30 — Snapshot and render tests written for SignalTimeline. Last updated timestamp added to feed. ConfidenceBadge component created for color-coded signal strength.
+
+> May 31 — DevPanel component introduced. Keyboard shortcut (R) added for refreshing wallet data. StatusPill introduced for signal-type visuals.
+
+> June 1 — SignalFilter dropdown added to filter signals by type. Filter state persists via localStorage.
+
+> June 2 — Theme toggling infrastructure scaffolded with useTheme hook. Shortcuts hint added to DevPanel.
+
+> June 3 — Clipboard copy added to WalletHeader. Address truncated with hover + toast notification.
+
+> June 4 — TokenDistributionBar visualized wallet token value share. KBD styling applied globally.
+
+> June 5 — Toast notifications wired using react-hot-toast. Refresh action triggers confirmation alert.
+
+> June 6 — SECURITY.md expanded with scope, contact, safe harbor, and reporting guidelines.
+
+> June 7 — SignalTimeline timestamps now include UTC tooltips. Design polish applied to badges and layout margins.
+
+> June 8 — StatusPill colors updated. Token risk interfaces and SignalEntry types added to types/index.
+
+> June 9 — LoadingSpinner created and applied. DevPanel expanded to show signal count and filter state.
+
+> June 10 — SignalLegend component added with visual guide to signal meanings. Filter + Legend now always shown.
+
+> June 11 — SignalFilter refactored to use controlled dropdown. Toasts stack gracefully. Keyboard shortcut reminder displayed inline.
+
+> June 12 — WatchedWallet, SignalEntry, and TokenRisk types introduced. Shared types consolidated in types/index.ts.
+
+> June 13 — DevPanel conditionally rendered only in dev environments. Improved onRefresh behavior with notification triggers.
+
+> June 14 — Toaster component globally mounted. Hotkeys now trigger toast feedback.
+
+> June 15 — Added getColor logic to signal UI elements. Signal timeline now color-coded by confidence range.
+
+> June 16 — TokenValueBar and TokenDistributionBar synchronized layout. Glow trails refined using Tailwind animation tweaks.
+
+> June 17 — StatusPill icons added. Minor refactor of signal map logic.
+
+> June 18 — Toast theme and font smoothing standardized. Dev tools now display context on hover.
+
+> June 19 — Added toast.ts util in lib/. App logic cleaned up to reduce inline event handlers.
+
+> June 20 — Expanded Juno update log in UPDATES.md. Dates and grouping normalized.
+
+> June 21 — Added support for future wallet syncing via button action. Placeholder syncWallet() logic introduced. Toast + visual icon indicator ready.
+
