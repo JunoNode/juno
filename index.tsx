@@ -66,6 +66,11 @@ useEffect(() => {
           onRefresh={handleRefresh}
         />
         <WalletDashboard {...dummyWallet} />
+        <WalletStats
+          tokenCount={mockTokens.length}
+          signalCount={filteredSignals.length}
+          totalValue={mockTokens.reduce((sum, t) => sum + t.usdValue, 0)}
+         />
         <WalletTokenTable tokens={mockTokens} />
         <TokenValueBar tokens={mockTokens} />
         <SignalFilter selected={filter} onChange={setFilter} />
@@ -88,3 +93,5 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+
