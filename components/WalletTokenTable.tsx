@@ -1,7 +1,6 @@
 import React from 'react';
-import { formatAmount } from '../utils/formatAmount';
 
-interface TokenHolding {
+interface Token {
   name: string;
   symbol: string;
   amount: number;
@@ -9,28 +8,28 @@ interface TokenHolding {
 }
 
 interface Props {
-  tokens: TokenHolding[];
+  tokens: Token[];
 }
 
 const WalletTokenTable: React.FC<Props> = ({ tokens }) => {
   return (
-    <div className="mt-6 rounded-xl bg-white p-4 shadow-md max-w-xl mx-auto">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">Token Holdings</h3>
-      <table className="w-full text-sm text-left text-gray-700">
-        <thead className="text-xs text-gray-500 uppercase">
+    <div className="mt-6 max-w-3xl mx-auto px-4">
+      <h3 className="text-lg font-semibold text-gray-100 mb-3">Token Holdings</h3>
+      <table className="w-full text-left text-sm text-gray-300">
+        <thead className="border-b border-glass">
           <tr>
-            <th className="pb-2">Name</th>
-            <th className="pb-2">Symbol</th>
-            <th className="pb-2 text-right">Amount</th>
-            <th className="pb-2 text-right">USD Value</th>
+            <th className="py-2">Token</th>
+            <th className="py-2 text-right">Amount</th>
+            <th className="py-2 text-right">Value (USD)</th>
           </tr>
         </thead>
         <tbody>
-          {tokens.map((token, i) => (
-            <tr key={i} className="border-t border-gray-200">
-              <td className="py-2">{token.name}</td>
-              <td className="py-2">{token.symbol}</td>
-              <td className="py-2 text-right">{formatAmount(token.amount)}</td>
+          {tokens.map((token, idx) => (
+            <tr key={idx} className="border-b border-glass hover:bg-glass transition">
+              <td className="py-2 max-w-[160px] truncate" title={token.name}>
+                <span className="font-medium">{token.symbol}</span>
+              </td>
+              <td className="py-2 text-right">{token.amount.toLocaleString()}</td>
               <td className="py-2 text-right">${token.usdValue.toFixed(2)}</td>
             </tr>
           ))}
