@@ -1,4 +1,5 @@
 import React from 'react';
+import TokenEmptyState from './TokenEmptyState'; // ✅ Import
 
 interface Token {
   name: string;
@@ -13,6 +14,9 @@ interface Props {
 
 const WalletTokenTable: React.FC<Props> = ({ tokens }) => {
   const totalUSD = tokens.reduce((sum, t) => sum + t.usdValue, 0);
+
+  // ✅ Early return for empty state
+  if (tokens.length === 0) return <TokenEmptyState />;
 
   return (
     <div className="mt-6 max-w-3xl mx-auto px-4">
@@ -35,7 +39,6 @@ const WalletTokenTable: React.FC<Props> = ({ tokens }) => {
               <td className="py-2 text-right">${token.usdValue.toFixed(2)}</td>
             </tr>
           ))}
-          {/* ✅ Total USD row */}
           <tr className="font-semibold text-white">
             <td colSpan={2} className="text-right pr-2">Total</td>
             <td className="text-right">${totalUSD.toFixed(2)}</td>
