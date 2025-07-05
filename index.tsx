@@ -43,7 +43,7 @@ useEffect(() => {
     filter === 'all' ? mockSignals : mockSignals.filter((s) => s.type === filter);
 
   const handleRefresh = () => {
-    notifyRefresh
+    notifyRefresh();
   };
 
   useEffect(() => {
