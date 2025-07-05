@@ -11,7 +11,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import DevPanel from './components/DevPanel';
 import { Toaster } from 'react-hot-toast';
 import { notifyRefresh } from './lib/toast';
-import './index.css';;
+import './index.css';
 
 const dummyWallet = {
   address: "9gzLP8xR9dRka...vU7W",
