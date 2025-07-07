@@ -1,21 +1,37 @@
-import axios from "axios";
+import { OpenAIStream } from "@/lib/OpenAIStream";
+import { ChatMessage } from "@/types/chat";
+import { buildJunoPrompt } from "./promptBuilder";
 
-const OPENAI_API_KEY = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+interface ChatRequestBody {
+  messages: ChatMessage[];
+  walletSummary: string;
+}
 
-export async function fetchJunoReply(prompt: string) {
-  const response = await axios.post(
-    "https://api.openai.com/v1/chat/completions",
-    {
+export async function POST(req: Request) {
+  try {
+    const { messages, walletSummary }: ChatRequestBody = await req.json();
+
+    const userMessage = messages.find((msg) => msg.role === "user");
+    const memory = messages
+      .filter((msg) => msg.role !== "user")
+      .map((msg) => msg.content);
+
+    const prompt = buildJunoPrompt({
+      memory,
+      walletSummary,
+      input: userMessage?.content || "",
+    });
+
+    const response = await OpenAIStream({
       model: "gpt-4",
-      messages: [{ role: "user", content: prompt }],
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-    }
-  );
+      prompt,
+      temperature: 0.7,
+      max_tokens: 800,
+    });
 
-  return response.data.choices[0].message.content;
+    return new Response(response);
+  } catch (err: any) {
+    console.error("[ChatAPI Error]", err.message || err);
+    return new Response("Failed to generate response", { status: 500 });
+  }
 }
