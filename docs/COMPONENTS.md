@@ -1,51 +1,54 @@
-# Juno Component Reference
+# Juno Components Overview
 
-This document lists all UI components used in the Juno project and their responsibilities.
-
----
-
-## `WalletDashboard.tsx`
-Displays wallet summary info:
-- Address
-- Total signals
-- Top signal type
-- Average confidence
+This file documents all core visual components used in Juno.
 
 ---
 
-## `WalletTokenTable.tsx`
-Table displaying token balances:
-- Token name, symbol, amount, and USD value
+## Dashboard
+
+| Component            | Purpose                                                     |
+|----------------------|-------------------------------------------------------------|
+| `WalletHeader`       | Displays wallet address and refresh action                 |
+| `WalletDashboard`    | Summarized wallet metrics (signals, confidence)            |
+| `WalletStats`        | Token count, total value, and signal count                 |
+| `WalletTokenTable`   | Lists all tokens with USD value and amount                 |
+| `TokenValueBar`      | Visual bar breakdown of token distribution                 |
 
 ---
 
-## `TokenValueBar.tsx`
-Visual bar showing portfolio distribution:
-- Width = token's % of total USD value
-- Colored segments
+## Signals
+
+| Component            | Purpose                                                     |
+|----------------------|-------------------------------------------------------------|
+| `WalletSignalFeed`   | Recent signals and their confidence                         |
+| `SignalLegend`       | Color and type key for signal meanings                      |
+| `SignalTimeline`     | Vertical chronological view of signals                      |
+| `ConfidenceBadge`    | Color-coded signal strength UI                              |
+| `SignalFilter`       | Dropdown to filter signals by type                          |
 
 ---
 
-## `WalletSignalFeed.tsx`
-List of most recent wallet signals:
-- Signal type, confidence %, and timestamp
-- Emoji icons to help differentiate signal types
+## System & Dev
+
+| Component            | Purpose                                                     |
+|----------------------|-------------------------------------------------------------|
+| `ErrorBoundary`      | Prevents app crashes from uncaught errors                   |
+| `DevPanel`           | Debug panel for tokens, signals, filter state               |
+| `ThemeToggle`        | Light/dark/ambient toggle control                           |
+| `WalletAddressBadge` | Truncated and copyable wallet address display               |
 
 ---
 
-## `SignalTimeline.tsx`
-Vertical timeline of signal events:
-- Date/time, signal type, confidence
+## AI & User Interaction
+
+| Component            | Purpose                                                     |
+|----------------------|-------------------------------------------------------------|
+| `AIChatInterface`    | Interactive GPT-powered assistant tailored to wallet data   |
 
 ---
 
-## `WalletSkeleton.tsx`
-Loading skeleton used while fetching data:
-- Animates shimmer placeholder blocks
+## Planned / Future Components
 
----
-
-## Coming Soon
-- `WalletNftTable.tsx`
-- `Token/NFT Toggle Tabs`
-- `Signal Confidence Badges`
+| Component            | Purpose                                                     |
+|----------------------|-------------------------------------------------------------|
+| `MapOverlay`         | Visual navigation layer — a "treasure map" for wallet info, showing token clusters, signal territories, and history trails on a spatial grid. Planned as a symbolic UX for exploring connected signal zones or past transactions in a visual timeline. |
