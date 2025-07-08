@@ -50,7 +50,7 @@ useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key.toLowerCase() === 'r') {
         e.preventDefault();
-        handleRefresh();
+        handlerefresh();
       }
     };
     window.addEventListener('keydown', handleKey);
