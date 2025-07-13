@@ -72,15 +72,15 @@ Just clarity, precision, and your own private signal tracker.
    git clone https://github.com/JunoNode/juno.git
    cd juno
    
-## Install Dependencies
+### Install Dependencies
 
 2. npm install
 
-## Configure Environment Variables
+### Configure Environment Variables
 
 3. Copy .env.example to .env.local and add your keys.
 
-## Run The App
+### Run The App
 
 4. npm run dev
 
@@ -96,13 +96,13 @@ Just clarity, precision, and your own private signal tracker.
 
 ---
 
-## License
+### License
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
-## Links
+### Links
 
 Website (Coming Soon)
 
@@ -110,7 +110,7 @@ Twitter: [@JunoNode](https://twitter.com/JunoNode)
 
 ---
 
-## Powered By
+### Powered By
 
 ![Powered by GPT-4](https://img.shields.io/badge/powered%20by-GPT--4-black)
 ![Built with Vite](https://img.shields.io/badge/build-vite-blue)
