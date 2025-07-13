@@ -13,7 +13,7 @@ Modular. Minimal. Memory-aware. Built for explorers.
 </p>
 
 <p align="center">
-<a href="https://junonode.gitbook.io/junonode">Docs</a> • <a href="./COMPONENTS.md">Components</a> • <a href="./BREAKOUT.md">Breakout Submission</a> • <a href="./MANIFESTO.md">Juno Manifesto</a>
+<a href="https://junonode.gitbook.io/junonode">Docs</a> • <a href="https://github.com/JunoNode/juno/tree/main/components">Components</a> • <a href="./BREAKOUT.md">Breakout Submission</a> • <a href="./MANIFESTO.md">Juno Manifesto</a>
 
 </p>
 
