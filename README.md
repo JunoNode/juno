@@ -1,41 +1,75 @@
-# Juno
+<img width="4026" height="1001" alt="image" src="https://github.com/user-attachments/assets/5b1c504e-c28e-4edb-8586-1bf9455ebd8d" />
 
-Juno is an AI-powered crypto trading agent built to help users navigate the markets with clarity, calm, and confidence.  
-It combines intelligent portfolio tracking, risk detection, and signal analysis — all within an immersive, jungle-inspired interface.
+<p align="center">
+Juno: The ambient intelligence of your Solana wallet.
+</p>
 
----
+<p align="center">
+Track signals. Visualize confidence. Chat with your wallet.
+</p>
 
-## Features
+<p align="center">
+Modular. Minimal. Memory-aware. Built for explorers.
+</p>
 
-- Conversational AI Interface — Ask Juno for insights, market scans, wallet risks, and more.
-- Portfolio Tracker — View real-time balances and historical PnL across chains.
-- Smart Alerts Engine — Get notified about rugs, insider moves, stealth listings, and liquidity shifts.
-- Wallet Watcher — Follow smart money wallets and whale activity.
-- Stealth Launch Radar — Detect newly deployed tokens early and assess risks instantly.
-- Multi-chain Support — Ethereum, Solana, Arbitrum, Base (extensible).
-- Jungle-Themed UX — Light, clean, and immersive environment that enhances focus.
+<p align="center">
+<a href="https://junonode.gitbook.io/junonode">Docs</a> • <a href="./COMPONENTS.md">Components</a> • <a href="./BREAKOUT.md">Breakout Submission</a> • <a href="./MANIFESTO.md">Juno Manifesto</a>
 
----
-
-## Tech Stack
-
-- Frontend: Next.js, React, Tailwind CSS, Framer Motion
-- Backend: Node.js (Express) or Python (FastAPI), PostgreSQL
-- AI/NLP: OpenAI GPT-4 API (natural language interaction)
-- Blockchain APIs:
-  - Covalent API – Portfolio and wallet data
-  - DexScreener API – Market scanning, trending tokens
-  - GoPlus API – Contract risk/security analysis
-  - CoinGecko API – Token pricing and metadata
-  - Moralis API – Optional real-time wallet tracking
+</p>
 
 ---
 
-## Getting Started
+Juno is a real-time Solana dashboard that listens to what your wallet is doing and helps you understand it.
+
+It shows token values, visual timelines, and signal strength with a clean, ambient UI.  
+An onboard AI assistant lets you ask questions about your wallet activity using custom code mixed with GPT‑4 powered by memory, prompts, and real-time context.
+
+No setup friction. No bloated UX.  
+Just clarity, precision, and your own private signal tracker.
+
+---
+
+### Features
+
+- **Conversational AI** — Ask Juno about wallet activity, market behavior, token risks, and signal trends.
+
+- **Portfolio Tracking** — Monitor real-time balances, value shifts, and historical performance across supported chains.
+
+- **Smart Alerts** — Surface critical events like stealth listings, liquidity shifts, insider activity, and potential rugs.
+
+- **Wallet Watching** — Track influential wallets and follow smart money movements as they happen.
+
+- **Launch Radar** — Detect and analyze newly deployed tokens before they trend.
+
+- **Multi-chain Ready** — Built with extensibility in mind for Solana, Ethereum, Arbitrum, Base, and more.
+
+- **Ambient UI** — Jungle-inspired interface designed for clarity, minimalism, and deep focus.
+
+
+---
+
+### Tech Stack
+
+- `frontend` : React (Vite), Tailwind CSS, Framer Motion for modular, animated UI
+
+- `backend` : Node.js (Express) and Python (FastAPI) microservices for signal processing and memory
+
+- `ui-system` : Component-driven layout with reusable elements and dynamic transitions
+
+- `data-layer` : PostgreSQL for wallet session storage, signal logs, and prompt history
+
+- `ai-layer` : GPT-4 powered natural language assistant connected to wallet and signals
+
+- `dev-tools` : TypeScript, ESLint, Prettier, Jest, React Testing Library
+
+---
+
+### Getting Started
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-org/juno.git
+   git clone https://github.com/JunoNode/juno.git
    cd juno
    
 ## Install Dependencies
@@ -44,7 +78,7 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ## Configure Environment Variables
 
-3. Copy .env.example to .env.local and add your API keys.
+3. Copy .env.example to .env.local and add your keys.
 
 ## Run The App
 
@@ -52,27 +86,19 @@ It combines intelligent portfolio tracking, risk detection, and signal analysis 
 
 ---
 
-## Docs
+### How It Works
 
-[Explore the Docs (GitBook)](https://junonode.gitbook.io/junonode)
-
----
-
-## Part of the Solana Breakout Hackathon 2025  
-
-[Read the Breakout Submission →](./BREAKOUT.md)
-
----
-
-## Manifesto
-
-[Read the Juno Manifesto →](./MANIFESTO.md)  
+1. Wallet connects (or uses mock data)
+2. Tokens and signals are parsed and scored
+3. Data flows through session memory
+4. AI assistant responds based on wallet state
+5. Visual components update live as new events arrive
 
 ---
 
 ## License
 
-MIT © Juno
+![MIT License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
@@ -82,9 +108,10 @@ Website (Coming Soon)
 
 Twitter: [@JunoNode](https://twitter.com/JunoNode)
 
-![Foundation](https://github.com/user-attachments/assets/4a2193f6-5982-4ae7-a14e-e4f2b4726ba1)
+---
 
+## Powered By
 
-
-
+![Powered by GPT-4](https://img.shields.io/badge/powered%20by-GPT--4-black)
+![Built with Vite](https://img.shields.io/badge/build-vite-blue)
 
