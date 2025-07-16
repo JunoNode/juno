@@ -104,7 +104,7 @@ Just clarity, precision, and your own private signal tracker.
 
 ### Links
 
-Website (Coming Soon)
+Website: [junonode.io](https://junonode.io/)
 
 Twitter: [@JunoNode](https://twitter.com/JunoNode)
 
