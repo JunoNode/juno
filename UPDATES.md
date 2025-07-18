@@ -100,3 +100,42 @@ This document logs development progress and public milestones for Juno.
 
 > June 21 — Added support for future wallet syncing via button action. Placeholder syncWallet() logic introduced. Toast + visual icon indicator ready.
 
+> June 21 — Added WalletStats component to the main view. Displays token count, signal count, and total USD value.
+
+> June 22 — Implemented hover animation for SignalTimeline dots. WalletTokenTable updated with total value footer row.
+
+> June 23 — Created WalletAddressBadge for copying and truncating addresses. Improved layout on mobile.
+
+> June 25 — Added empty state TokenEmptyState to WalletTokenTable for when no tokens exist.
+
+> June 27 — Refined WalletDashboard.tsx with better layout and simplified copy. Enhanced responsive spacing.
+
+> June 28 — Improved getSignalIcon.ts with fallback cases and clarified emoji logic.
+
+> June 30 — Finished setting up Renen repository and visual outline for Solana culture ledger project.
+
+> July 1 — Created WalletSkeleton loader shimmer for loading states in token and signal feeds.
+
+> July 2 — Added EmptyState.tsx component for consistent empty state visuals across features.
+
+> July 3 — Refined DevPanel styling and added active filter display. Applied shortcut tooltip polish.
+
+> July 5 — Created LoadingSpinner component. Used in Wallet loading phase and Grove assistant thinking state.
+
+> July 6 — Snapshot test added for SignalTimeline. Increased test coverage on signal mapping.
+
+> July 7 — Theme toggle fully wired with useTheme. Added dark/light toggle in header.
+
+> July 9 — Created centralized toast.ts utility. All toast messages now pipe through one consistent handler.
+
+> July 10 — Refined WalletHeader with toast-on-copy address confirmation and improved hover styles.
+
+> July 11 — Updated TokenValueBar with smoother animation transitions. Total token value logic clarified.
+
+> July 13 — Added jest.setup.js refinements and test utility updates. Cleaned up legacy test config.
+
+> July 15 — Created tx_history.py for Solana transaction parsing. Added validation and cleaner field extraction.
+
+> July 16 — GitHub README fully rebuilt. Juno branding, layout, features, and component links standardized.
+
+> July 17 — GitBook categories overhauled for better UX. All entries rewritten with consistent tone, structure, and dev-oriented language.
