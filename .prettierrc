@@ -1,24 +1,20 @@
 {
   "semi": true,
-  "trailingComma": "es5",
   "singleQuote": true,
+  "trailingComma": "es5",
   "printWidth": 80,
   "tabWidth": 2,
   "endOfLine": "lf"
 }
 
+
 ---
 
-This file sets your formatting rules:
+This configuration defines Juno's code formatting conventions:
 
-> semi: Enforce semicolons at the end of statements.
-
-> trailingComma: Use trailing commas in ES5-valid places.
-
-> singleQuote: Prefer single quotes for strings.
-
-> printWidth: Wrap lines longer than 80 characters.
-
-> tabWidth: Use 2 spaces per indent.
-
-> endOfLine: Ensure consistent line endings.
+- semi: Always use semicolons at the end of statements (true)
+- singleQuote: Prefer single quotes for strings (true)
+- trailingComma: Add trailing commas where valid in ES5 (e.g., objects, arrays)
+- printWidth: Wrap lines that exceed 80 characters
+- tabWidth: Use 2 spaces per indentation level
+- endOfLine: Enforce LF line endings for consistency across systems
