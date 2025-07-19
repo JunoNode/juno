@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import WalletSignalFeed from '../components/WalletSignalFeed';
 
 describe('WalletSignalFeed', () => {
@@ -9,8 +9,20 @@ describe('WalletSignalFeed', () => {
     { type: 'volume-spike', confidence: 0.74, timestamp: '2024-05-27T08:45:00Z' },
   ];
 
+  it('renders all signals', () => {
+    render(<WalletSignalFeed signals={mockSignals} />);
+    mockSignals.forEach(({ type }) => {
+      expect(screen.getByText(new RegExp(type.replace('-', ' '), 'i'))).toBeInTheDocument();
+    });
+  });
+
   it('matches snapshot', () => {
     const { asFragment } = render(<WalletSignalFeed signals={mockSignals} />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('handles empty signal list', () => {
+    render(<WalletSignalFeed signals={[]} />);
+    expect(screen.getByText(/no signals found/i)).toBeInTheDocument();
   });
 });
