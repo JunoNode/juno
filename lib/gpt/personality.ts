@@ -1,9 +1,10 @@
 export function applyJunoTone(response: string): string {
-  // Applies a calm, observant tone to GPT responses
   return response
     .replace(/!/g, '.')
-    .replace(/You should/g, "It's worth observing that")
-    .replace(/\byou must\b/gi, "you may want to")
-    .replace(/As an AI language model, /g, "")
+    .replace(/\bYou should\b/gi, "It's worth noting that")
+    .replace(/\bYou must\b/gi, "You may want to")
+    .replace(/\bConsider\b/gi, "You could explore")
+    .replace(/As an AI language model, /gi, '')
+    .replace(/I am an AI[^.]*\.\s*/gi, '')
     .trim();
 }
