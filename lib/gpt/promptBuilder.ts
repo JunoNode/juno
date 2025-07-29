@@ -1,16 +1,23 @@
 import { MemoryEntry } from "@/lib/memory";
 
-export function buildPrompt(memory: MemoryEntry[], newPrompt: string, walletSummary?: string): any[] {
-  const base: any[] = [];
+export function buildPrompt(
+  memory: MemoryEntry[],
+  newPrompt: string,
+  walletSummary?: string
+): { role: "system" | "user" | "assistant"; content: string }[] {
+  const prompt: { role: "system" | "user" | "assistant"; content: string }[] = [];
 
   if (walletSummary) {
-    base.push({
+    prompt.push({
       role: "system",
-      content: `This user holds the following tokens: ${walletSummary}. Use this context when replying.`,
+      content: `Context: This user holds the following tokens — ${walletSummary}. Use this information to inform your responses.`,
     });
   }
 
-  const history = memory.map((m) => ({ role: m.role, content: m.content }));
+  const history = memory.map((entry) => ({
+    role: entry.role,
+    content: entry.content,
+  }));
 
-  return [...base, ...history, { role: "user", content: newPrompt }];
+  return [...prompt, ...history, { role: "user", content: newPrompt }];
 }
