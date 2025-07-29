@@ -1,30 +1,58 @@
-If you’re storing session-based GPT memory in a structure like:
+export type MemoryRole = "user" | "assistant" | "system";
 
-export const memory: MemoryEntry[] = [];
-
-export function addToMemory(user: string, assistant: string) {
-  memory.push({ user, assistant });
+export interface MemoryEntry {
+  role: MemoryRole;
+  content: string;
+  timestamp: number;
 }
 
-export function clearMemory() {
+const memory: MemoryEntry[] = [];
+
+/**
+ * Add a new user + assistant exchange to session memory.
+ */
+export function addToMemory(user: string, assistant: string): void {
+  const now = Date.now();
+
+  memory.push(
+    { role: "user", content: user, timestamp: now },
+    { role: "assistant", content: assistant, timestamp: now }
+  );
+
+  if (process.env.NODE_ENV === "development") {
+    console.debug("[Memory] Added user/assistant pair", { user, assistant });
+  }
+}
+
+/**
+ * Retrieve current memory stack.
+ */
+export function getMemory(): MemoryEntry[] {
+  return [...memory];
+}
+
+/**
+ * Clear all memory entries.
+ */
+export function clearMemory(): void {
   memory.length = 0;
+
+  if (process.env.NODE_ENV === "development") {
+    console.debug("[Memory] Cleared session memory");
+  }
 }
 
-Then test like this:
-
-import { memory, addToMemory, clearMemory } from "@/lib/memory/sessionMemory";
-
-describe("sessionMemory", () => {
-  it("adds to memory", () => {
-    clearMemory();
-    addToMemory("Hi", "Hello");
-    expect(memory.length).toBe(1);
-    expect(memory[0].user).toBe("Hi");
+/**
+ * Add a system-level instruction to memory.
+ */
+export function injectSystemMessage(content: string): void {
+  memory.unshift({
+    role: "system",
+    content,
+    timestamp: Date.now(),
   });
 
-  it("clears memory", () => {
-    clearMemory();
-    expect(memory.length).toBe(0);
-  });
-});
- 
+  if (process.env.NODE_ENV === "development") {
+    console.debug("[Memory] System message injected:", content);
+  }
+}
