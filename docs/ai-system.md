@@ -28,6 +28,7 @@ The AI system — internally referred to as the Grove — functions as an assist
    ↓
 [Chat UI Render]
 
+```
 
 - `useChat.ts` manages conversation memory and status flags  
 - `promptBuilder.ts` injects wallet data + memory into a structured GPT input  
