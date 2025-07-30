@@ -1,30 +1,53 @@
-#  Signal Reference
+# Signal Reference
 
-Juno surfaces alerts with calm priority — here’s what each type means:
+Juno surfaces real-time on-chain events through lightweight signal logic. Each signal is assigned a risk level and confidence score, letting you triage the chain without noise.
 
-- `token_mintable`: Token contract allows minting
-- `trading_paused`: Transfers frozen or blocked
-- `new_liquidity`: Token just received LP on Solana DEX
-- `wallet_activity_spike`: Tracked address shows burst in transactions
+---
 
-Each signal is scored and surfaced based on risk logic.
+## Signal Types
+
+These are the core signal types currently surfaced:
+
+- `token_mintable`: Contract allows further token minting: inflation risk.
+- `trading_paused`: Transfers frozen or disabled: exit risk.
+- `new_liquidity`: LP was added recently: likely a fresh launch.
+- `wallet_activity_spike`: Tracked wallet has a sudden burst in transactions.
+
+All signals are scored and filtered before surfacing, using context-aware rules.
+
+---
 
 ## Signal Severity Levels
 
-- **Level 3** — Paused Trading (Critical, may block exits)
-- **Level 2** — Mintable Token (Medium risk, needs watching)
-- **Level 1** — Wallet Activity / New Launch (Informational)
+Juno ranks signals by severity to control urgency:
 
-Used to prioritize what Juno surfaces calmly vs urgently.
- 
-## Signal Confidence Scoring
+- **Level 3 — High**  
+  `trading_paused`: Critical. May prevent exits or signal rug attempts.
 
-Each signal includes a `confidenceScore` between 0 and 1, based on:
+- **Level 2 — Medium**  
+  `token_mintable`: Token is mintable, could lead to dilution or abuse.
 
-- **Wallet Age**: Older wallets are typically more reliable.
-- **Volume**: Signals with higher USD volume are stronger.
-- **Signal Type**: Some signal types carry more predictive weight.
-- **Historical Accuracy**: If tracked, past signal success influences scoring.
-- **Direction**: Buy vs sell biases the output slightly.
+- **Level 1 — Low**  
+  `wallet_activity_spike`, `new_liquidity`: Informational. Requires context.
 
-Use this score to filter or rank signals before executing or displaying them.
+These levels help Juno surface high-risk events with priority, while keeping ambient signals visible but low-pressure.
+
+---
+
+## Confidence Scoring
+
+Each signal includes a `confidenceScore` between `0.00` and `1.00`, based on:
+
+- **Wallet Age** — Older wallets carry stronger weight.  
+- **USD Volume** — Higher transaction volume = higher confidence.  
+- **Signal Type** — Some signals are naturally more predictive.  
+- **Historical Accuracy** — (Planned) Juno will track past outcomes to tune signal trust.  
+- **Direction** — Bias applied based on buy/sell flow.
+
+Use confidence scores to:
+
+- Visually rank severity (`0.85+` = high confidence)
+- Filter low-quality signals
+- Pipe into downstream automation models
+
+---
