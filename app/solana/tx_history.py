@@ -2,27 +2,52 @@
 
 from solana.rpc.api import Client
 from typing import List, Dict, Any, Optional
+from solana.rpc.types import MemcmpOpts
+import time
 
 SOLANA_RPC_URL = "https://api.mainnet-beta.solana.com"
 client = Client(SOLANA_RPC_URL)
 
-def get_transaction_history(address: str, limit: int = 10) -> List[Dict[str, Any]]:
+LAMPORTS_PER_SOL = 1_000_000_000
+
+
+def get_transaction_history(
+    address: str,
+    limit: int = 20,
+    before: Optional[str] = None,
+    tx_type_filter: Optional[str] = None
+) -> List[Dict[str, Any]]:
+    """
+    Fetches parsed transaction history for a given Solana address.
+
+    Args:
+        address: Wallet or program address to fetch history for.
+        limit: Number of transactions to return (max 1,000 with pagination).
+        before: Signature to start before (for pagination).
+        tx_type_filter: Optional string to only include transactions of a given type.
+
+    Returns:
+        List of transaction metadata dictionaries.
+    """
     try:
-        signature_response = client.get_signatures_for_address(address, limit=limit)
-        signatures = signature_response.get("result", [])
+        sig_resp = client.get_signatures_for_address(
+            address, limit=limit, before=before
+        )
+        signatures = sig_resp.get("result", [])
     except Exception as e:
         print(f"[juno:tx] error fetching signatures for {address} → {e}")
         return []
 
-    transactions = []
+    transactions: List[Dict[str, Any]] = []
 
-    for sig in signatures:
-        signature = sig.get("signature")
+    for sig_info in signatures:
+        signature = sig_info.get("signature")
         if not signature:
             continue
 
         try:
-            tx = client.get_parsed_transaction(signature).get("result")
+            tx_resp = client.get_parsed_transaction(signature)
+            tx = tx_resp.get("result")
         except Exception as e:
             print(f"[juno:tx] error parsing transaction {signature} → {e}")
             continue
@@ -30,17 +55,40 @@ def get_transaction_history(address: str, limit: int = 10) -> List[Dict[str, Any
         if not tx:
             continue
 
+        block_time = tx.get("blockTime")
         instructions = tx.get("transaction", {}).get("message", {}).get("instructions", [])
-        parsed = instructions[0].get("parsed", {}) if instructions else {}
+        meta = tx.get("meta", {})
 
-        transactions.append({
-            "signature": signature,
-            "blockTime": tx.get("blockTime"),
-            "type": parsed.get("type"),
-            "amount": parsed.get("info", {}).get("lamports"),
-            "source": parsed.get("info", {}).get("source"),
-            "destination": parsed.get("info", {}).get("destination")
-        })
+        for ix in instructions:
+            parsed = ix.get("parsed")
+            if not parsed:
+                continue
+
+            tx_type = parsed.get("type")
+            if tx_type_filter and tx_type != tx_type_filter:
+                continue
+
+            info = parsed.get("info", {})
+
+            transactions.append({
+                "signature": signature,
+                "blockTime": block_time,
+                "type": tx_type,
+                "amountSOL": (
+                    int(info.get("lamports", 0)) / LAMPORTS_PER_SOL
+                    if info.get("lamports") else None
+                ),
+                "source": info.get("source"),
+                "destination": info.get("destination"),
+                "status": meta.get("err") is None,
+            })
 
     return transactions
 
+
+if __name__ == "__main__":
+    # Example usage
+    addr = "YourWalletAddressHere"
+    txs = get_transaction_history(addr, limit=5)
+    for t in txs:
+        print(t)
