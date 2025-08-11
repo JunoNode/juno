@@ -1,22 +1,43 @@
 export interface SignalInput {
   signalType: string;
-  walletAgeDays: number;
-  recentVolumeUSD: number;
-  isBuySignal: boolean;
-  pastAccuracyScore?: number; // optional historical success metric
+  walletAgeDays: number;       // Age of the wallet in days
+  recentVolumeUSD: number;     // Trading volume in USD in recent period
+  isBuySignal: boolean;        // Direction of signal
+  pastAccuracyScore?: number;  // Optional historical accuracy (0–1)
 }
 
 export function computeConfidenceScore(signal: SignalInput): number {
-  const { walletAgeDays, recentVolumeUSD, isBuySignal, signalType, pastAccuracyScore } = signal;
+  const {
+    walletAgeDays,
+    recentVolumeUSD,
+    isBuySignal,
+    signalType,
+    pastAccuracyScore
+  } = signal;
 
-  const baseWeight = signalType === 'trend-reversal' ? 0.6 : 0.4;
-  const volumeWeight = Math.min(recentVolumeUSD / 10000, 1.0); // cap at 1
-  const ageWeight = Math.min(walletAgeDays / 180, 1.0); // cap at 6 months
+  // Base weight varies per signal type
+  const baseWeight = signalType === "trend-reversal" ? 0.65 : 0.45;
+
+  // Volume weight capped to avoid outliers dominating
+  const volumeWeight = Math.min(recentVolumeUSD / 10_000, 1.0);
+
+  // Wallet age weight capped at 6 months (180 days)
+  const ageWeight = Math.min(walletAgeDays / 180, 1.0);
+
+  // Accuracy weight falls back to neutral 0.5 if unknown
   const accuracyWeight = pastAccuracyScore ?? 0.5;
 
-  const directionWeight = isBuySignal ? 0.1 : -0.1;
+  // Direction bias: slightly boost buy signals, slightly penalize sells
+  const directionBias = isBuySignal ? 0.08 : -0.08;
 
-  const total = baseWeight * 0.3 + volumeWeight * 0.25 + ageWeight * 0.2 + accuracyWeight * 0.2 + directionWeight;
+  // Weighted scoring formula
+  const score =
+    baseWeight * 0.3 +
+    volumeWeight * 0.25 +
+    ageWeight * 0.2 +
+    accuracyWeight * 0.2 +
+    directionBias;
 
-  return Math.max(0, Math.min(1, parseFloat(total.toFixed(3))));
+  // Clamp between 0 and 1, round to 3 decimal places
+  return Math.max(0, Math.min(1, parseFloat(score.toFixed(3))));
 }
