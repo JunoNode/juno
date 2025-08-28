@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@solana/wallet-adapter-react": "^0.15.20",
@@ -27,13 +28,5 @@
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
-
-    "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "test": "jest"
-}
-
   }
 }
