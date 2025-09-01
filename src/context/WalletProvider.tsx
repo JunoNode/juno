@@ -1,7 +1,20 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { connectMetaMask, connectPhantom, isMetaMaskAvailable, isPhantomAvailable } from "@/lib/wallet";
+import { 
+  connectMetaMask, 
+  connectPhantom, 
+  isMetaMaskAvailable, 
+  isPhantomAvailable 
+} from "@/lib/wallet";
 
-type WalletType = "phantom" | "metamask" | null;
+// Add Trust and Coinbase imports
+import { 
+  connectTrustWallet, 
+  connectCoinbase, 
+  isTrustWalletAvailable, 
+  isCoinbaseAvailable 
+} from "@/lib/wallet";
+
+type WalletType = "phantom" | "metamask" | "trust" | "coinbase" | null;
 
 interface WalletContextProps {
   address: string | null;
@@ -28,6 +41,14 @@ export const WalletProvider = ({ children }: { children: React.ReactNode }) => {
       const addr = await connectMetaMask();
       setAddress(addr);
       setWalletType("metamask");
+    } else if (type === "trust" && isTrustWalletAvailable()) {
+      const addr = await connectTrustWallet();
+      setAddress(addr);
+      setWalletType("trust");
+    } else if (type === "coinbase" && isCoinbaseAvailable()) {
+      const addr = await connectCoinbase();
+      setAddress(addr);
+      setWalletType("coinbase");
     }
   };
 
