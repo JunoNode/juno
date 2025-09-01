@@ -139,3 +139,71 @@ This document logs development progress and public milestones for Juno.
 > July 16 — GitHub README fully rebuilt. Juno branding, layout, features, and component links standardized.
 
 > July 17 — GitBook categories overhauled for better UX. All entries rewritten with consistent tone, structure, and dev-oriented language.
+
+> July 18 — Began structured development log for Juno. Confirmed daily updates format for GitHub and GitBook.
+
+> July 19 — Internal testing of signal confidence engine. Adjusted weights for wallet age, trade volume, and accuracy scoring.
+
+> July 20 — Daily dev logging practice extended. Prepared Colosseum Eternal Challenge submission tracking.
+
+> July 21 — Added syncWallet placeholder logic for future integrations. Began WalletStats visual testing.
+
+> July 22 — Hover animation for SignalTimeline dots implemented. WalletTokenTable now includes USD totals in footer.
+
+> July 23 — WalletAddressBadge built with copy-to-clipboard and truncation logic. Tested on mobile layouts.
+
+> July 25 — EmptyState.tsx created for consistent fallback visuals across components. Applied to multiple views.
+
+> July 26 — Refined DevPanel to conditionally render only in development mode. Added signal type shortcut hints.
+
+> July 27 — Snapshot tests expanded for WalletDashboard and related UI modules.
+
+> July 28 — Introduced LoadingSpinner in Grove assistant thinking states. Applied globally to async UI.
+
+> July 29 — Improved WalletHeader hover styles. Clipboard toast polished.
+
+> July 30 — TokenValueBar animation transitions smoothed. Value logic refined for clarity.
+
+> July 31 — README.md updated with full branding alignment. All sections standardized for clarity.
+
+> Aug 1 — GitBook navigation overhaul. Reorganized categories and unified tone across entries.
+
+> Aug 2 — Added SignalTypeWeights constants with expanded scoring logic.
+
+> Aug 3 — Expanded DASHBOARD\_SECTIONS with new stats and sync view.
+
+> Aug 4 — Phantom integration finalized. MetaMask fallback confirmed functional.
+
+> Aug 5 — Juno Lite now is open beta with minimal feature set. Continuous updates till its out of lite stage.
+
+> Aug 6 — Eternal Challenge submission draft finalized. Week 1 update thread posted.
+
+> Aug 8 — Juno powered through Jupiter Ultra v2 API. Commit updates applied to hooks and utils.
+
+> Aug 9 — Dev notes drafted for RPC testing with Helius Laserstream. Repository prepared for local experimentation.
+
+> Aug 10 — Package.json cleanup performed. Dependencies corrected for stable runtime.
+
+> Aug 11 — Installed and configured gRPC dependencies for Laserstream client testing.
+
+> Aug 12 — Internal documentation updated for connecting to Laserstream devnet. Now laserstream is mainnet.
+
+> Aug 13 — Added test utilities for transaction streaming. Initial mock data parsing completed.
+
+> Aug 14 — Visual asset mockups updated with Juno styling. Backgrounds, colors, and iconography aligned.
+
+> Aug 15 — FAQ written and documented. Responses tailored in plain developer language.
+
+> Aug 16 — Wallet integrations visual finalized. Phantom and MetaMask support highlighted.
+
+> Aug 20 — Transaction history parser improved for block time, amount, and counterparty clarity.
+
+> Aug 22 — Eternal Challenge week 2/3 update posted. Logged improvements to core loop, confidence scoring, and UI.
+
+> Aug 25 — Juno Lite final preview prepared. Release messaging finalized for public drop.
+
+> Aug 28 — Laserstream mainnet connection tested with gRPC. Streaming stability validated in local runs.
+
+> Aug 29 — Ongoing improvements to buildWalletSummary util. Cleaner scoring, totals, and top signal tracking.
+
+> Aug 30 — Image assets for upcoming tweet visuals redesigned in full Juno theme.
