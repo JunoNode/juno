@@ -39,3 +39,4 @@ export async function getTransaction(signature: string, parsed = true) {
 export async function getBlock(slot: number) {
   return rpc("getBlock", [slot, { maxSupportedTransactionVersion: 0 }]);
 }
+
