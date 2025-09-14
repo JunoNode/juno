@@ -1,40 +1,65 @@
-/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles or component-specific tweaks */
+/* ----- Base (safe from purge) ----- */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
 
-html, body {
-  @apply bg-jungle text-white font-sans antialiased min-h-screen;
-}
+  html,
+  body {
+    @apply bg-jungle text-white font-sans antialiased min-h-screen min-w-0;
+  }
 
-#root {
-  @apply flex justify-center items-start p-6;
-}
-
-/* Utility overrides if needed (optional) */
-.glass-card {
-  background-color: theme('colors.glass');
-  backdrop-filter: blur(6px);
-  box-shadow: theme('boxShadow.soft');
-  border-radius: 1rem;
-  padding: 1.5rem;
+  /* If you use a root element (React/Vite/Next custom) */
+  #root {
+    @apply w-full max-w-7xl mx-auto flex justify-center items-start px-6 sm:px-8 py-6;
+  }
 }
 
-/* Animations available in tailwind.config.js */
-.fade-in {
-  @apply animate-fade;
+/* ----- Components (safe from purge) ----- */
+@layer components {
+  .glass-card {
+    /* Tailwind-compatible theme() lookups with sensible fallbacks */
+    background-color: theme('colors.glass.DEFAULT', rgba(255,255,255,0.04));
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    @apply rounded-2xl p-6 shadow-soft ring-1 ring-white/10;
+  }
+
+  /* Animation hooks (defined in tailwind.config.js -> theme.extend.animation / keyframes) */
+  .fade-in {
+    @apply animate-fade;
+  }
+  .float {
+    @apply animate-float;
+  }
+  .pulse-glow {
+    @apply animate-pulseGlow;
+  }
+  .drift {
+    @apply animate-drift;
+  }
+  .sonar {
+    @apply animate-sonar;
+  }
+
+  /* Optional alias if you want to avoid colliding with CSS `float` semantics in some libs */
+  .float-anim {
+    @apply animate-float;
+  }
 }
-.float {
-  @apply animate-float;
-}
-.pulse-glow {
-  @apply animate-pulseGlow;
-}
-.drift {
-  @apply animate-drift;
-}
-.sonar {
-  @apply animate-sonar;
+
+/* ----- Accessibility: respect reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .float,
+  .pulse-glow,
+  .drift,
+  .sonar,
+  .float-anim {
+    animation: none !important;
+  }
 }
